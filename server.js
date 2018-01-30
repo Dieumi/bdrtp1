@@ -1,4 +1,5 @@
 var http = require('http');
+var cheerio = require('cheerio');
 var rp = require('request-promise');
 	var request = require('request');
 var MongoClient = require('mongodb').MongoClient,
@@ -10,10 +11,15 @@ MongoClient.connect('mongodb://localhost:27017', function(err, client) {
 
    var collection = db.collection('SSSP');
    //Pour garder le chemin, enregistrer un backpointer.
-   for(var i =1;i<1976;i++){
+   for(var i =1;i<2;i++){
+
      rp("http://www.dxcontent.com/SDB_SpellBlock.asp?SDBID="+i ).then(function(body){
-       console.log(body);
+      var $= cheerio.load(body);
+      console.log($('.SpellDiv .heading').text());
+      console.log($('.SpellDiv .SPDet').text());
+      console.log($('.SpellDiv .SPDesc').text());
      });
+
    }
   /* var graph =
        [
