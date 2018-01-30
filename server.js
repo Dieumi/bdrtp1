@@ -4,6 +4,7 @@ var rp = require('request-promise');
 	var request = require('request');
 var MongoClient = require('mongodb').MongoClient,
    test = require('assert');
+var htmlparser = require('htmlparser');
 MongoClient.connect('mongodb://localhost:27017', function(err, client) {
   var db = client.db('graph_algorithms');
 //  console.log(db);
@@ -12,12 +13,24 @@ MongoClient.connect('mongodb://localhost:27017', function(err, client) {
    var collection = db.collection('SSSP');
    //Pour garder le chemin, enregistrer un backpointer.
    for(var i =1;i<2;i++){
-
+       console.log(i);
      rp("http://www.dxcontent.com/SDB_SpellBlock.asp?SDBID="+i ).then(function(body){
-      var $= cheerio.load(body);
-      console.log($('.SpellDiv .heading').text());
-      console.log($('.SpellDiv .SPDet').text());
+      var rawHtml = cheerio.load(body).html();
+      //var div = rawHtml('.SpellDiv');
+      //console.log(div);
+         var handler = new htmlparser.DefaultHandler(function(error, dom){
+             if (error)
+                 console.log(error.toString())
+
+         });
+         var parser = new htmlparser.Parser(handler);
+         parser.parseComplete(rawHtml);
+         console.log(handler.dom);
+
+     /* console.log($('.SpellDiv .heading').text());
+      console.log($('.SpellDiv .SPDet ').not('b').text());
       console.log($('.SpellDiv .SPDesc').text());
+      */
      });
 
    }
