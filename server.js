@@ -1,39 +1,101 @@
 var http = require('http');
 var cheerio = require('cheerio');
-var rp = require('request-promise');
-	var request = require('request');
+//var rp = require('request-retry');
+	var request = require('requestretry');
 var MongoClient = require('mongodb').MongoClient,
    test = require('assert');
 var htmlparser = require('htmlparser');
+var Regex = require("regex");
+
 MongoClient.connect('mongodb://localhost:27017', function(err, client) {
   var db = client.db('graph_algorithms');
+
+	var regex = /sorcerer\/wizard [01234]/;
+	var regex2 = /Components V/;
+	//console.log(regex.test("School conjuration (creation) [acid]; Level sorcerer/wizard 2, magus 2, bloodrager 2Casting Time 1 standard actionComponents V, S, M (rhubarb leaf and an adder's stomach), F (a dart)Range long (400 ft. + 40 ft./level)Effect one arrow of acidDuration 1 round + 1 round per three levelsSaving Throw none; Spell Resistance no"));
 //  console.log(db);
    // Create a test collection
 
    var collection = db.collection('SSSP');
+	  
+	 collection.find({}).toArray(function(err, result) {
+    if (err) throw err;
+    console.log(result);
+
+  });
    //Pour garder le chemin, enregistrer un backpointer.
-   for(var i =1;i<2;i++){
-       console.log(i);
-     rp("http://www.dxcontent.com/SDB_SpellBlock.asp?SDBID="+i ).then(function(body){
-      var rawHtml = cheerio.load(body).html();
-      //var div = rawHtml('.SpellDiv');
-      //console.log(div);
-         var handler = new htmlparser.DefaultHandler(function(error, dom){
-             if (error)
-                 console.log(error.toString())
+		var objet=[];
 
-         });
-         var parser = new htmlparser.Parser(handler);
-         parser.parseComplete(rawHtml);
-         console.log(handler.dom);
+   for(var i =1;i<1976;i++){
 
-     /* console.log($('.SpellDiv .heading').text());
-      console.log($('.SpellDiv .SPDet ').not('b').text());
-      console.log($('.SpellDiv .SPDesc').text());
-      */
-     });
+		var options = {
+			method: 'GET',
+		 	uri: 'http://www.dxcontent.com/SDB_SpellBlock.asp?SDBID='+i,
+			timeout: 600000,
+      headers: {
+            'Connection': 'keep-alive',
+            'Accept-Encoding': '',
+            'Accept-Language': 'en-US,en;q=0.8'
+        }
+		};
 
-   }
+			//console.log("attempt number test ");
+
+			request({
+				url:'http://www.dxcontent.com/SDB_SpellBlock.asp?SDBID='+i,
+				maxAttempts:5,
+				retryDelay:500
+			},function(err,response,body){
+
+			 var rawHtml = cheerio.load(body);
+			 var div = rawHtml('.SpellDiv .SPDet').text();
+
+
+			 if(regex.test(div) ){
+
+				 //console.log();
+				 //console.log(rawHtml('.SpellDiv .SPDet ').text());
+
+				 var name1= rawHtml('.SpellDiv .heading').text();
+				 var level1= div.split("sorcerer\/wizard")[1][1];
+				 var Components1= div.match(/([VSMF][^a-z]+|[VSMF])\s/g);
+				 var Resistance1= div.split("Spell Resistance")[1];
+				 console.log(name1);
+				// console.log(level1);
+				 var data={
+					 name: name1,
+					 level : level1,
+					 Components: Components1,
+					 Resistance : Resistance1
+				 };
+					 objet.push(data);
+					 console.log(objet.length)
+				 collection.insert(data);
+			 }
+
+
+			 //console.log(rawHtml('.SpellDiv .SPDesc').text());
+ /*
+					var handler = new htmlparser.DefaultHandler(function(error, dom){
+							if (error)
+									console.log(error.toString())
+
+					});
+					var parser = new htmlparser.Parser(handler);
+					parser.parseComplete(rawHtml);
+			 //   console.log(handler.dom[1]);
+ */
+
+})
+	}
+
+
+
+
+
+
+
+
   /* var graph =
        [
            { _id:"Ed" ,  value:{ backpointer: "", changed: false, type: "full", distance: 0, adjlist: ["Frank", "Julien"]}},
