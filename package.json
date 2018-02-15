@@ -8,10 +8,12 @@
     "htmlparser": "^1.7.7",
     "jsdom": "^11.6.2",
     "mongodb": "^3.0.2",
+    "regex": "^0.1.1",
     "request": "latest",
     "request-promise": "^4.2.2",
     "request-retry": "^1.0.0",
-    "requestretry": "^1.13.0"
+    "requestretry": "^1.13.0",
+    "string-format": "^0.5.0"
   },
   "devDependencies": {},
   "scripts": {
