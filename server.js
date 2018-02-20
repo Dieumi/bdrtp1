@@ -89,6 +89,7 @@ function processResults(results, client, collection) {
             var Resistance1 = div.split("Spell Resistance")[1];
             console.log(name1);
             // console.log(level1);
+						console.log(Components1);
             var data = {
                 name: name1,
                 level: level1,
