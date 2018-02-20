@@ -5,8 +5,8 @@ var format = require('string-format');
 var sqlite3 = require('sqlite3').verbose();
 
 const MAXINDEX = 1976;
-const collectionname = 'SSSP';
-const dbname = 'graph_algorithms';
+const collectionname = 'Spell';
+const dbname = 'BDR_TP1';
 
 format.extend(String.prototype);
 
