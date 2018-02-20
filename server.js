@@ -48,7 +48,7 @@ MongoClient.connect('mongodb://localhost:27017', function (err, client) {
         //console.log("attempt number test ");
         request({
             url: 'http://www.dxcontent.com/SDB_SpellBlock.asp?SDBID=' + i,
-            maxAttempts: 5,
+            maxAttempts: 10,
             retryDelay: 500
         }, function (err, response, body) {
 
@@ -80,7 +80,10 @@ function processResults(results, client, collection) {
     for (var i = 0; i < length; i++) {
         var rawHtml = cheerio.load(results[i]);
         var div = rawHtml('.SpellDiv .SPDet').text();
-
+        var rangepos = div.search('Range');
+        var afterRange = div.slice(rangepos);
+        div = div.slice(0, rangepos) + ' ';
+        div += afterRange;
 
         if (regex.test(div)) {
             var name1 = rawHtml('.SpellDiv .heading').text();
@@ -93,7 +96,7 @@ function processResults(results, client, collection) {
             var data = {
                 name: name1,
                 level: level1,
-                Components: Components1,
+                Components: Components1[0].replace(/\s/g, '').split(','),
                 Resistance: Resistance1
             };
             objet.push(data);
