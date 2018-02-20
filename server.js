@@ -4,6 +4,8 @@ var MongoClient = require('mongodb').MongoClient;
 var format = require('string-format');
 var sqlite3 = require('sqlite3').verbose();
 
+var db = new sqlite3.Database(':memory:');
+
 const MAXINDEX = 1976;
 const collectionname = 'Spell';
 const dbname = 'BDR_TP1';
@@ -115,4 +117,20 @@ function processResults(results, client, collection) {
             client.close(false);
         }
     });
+}
+
+
+function insertInSqlLite(data) {
+    db.serialize(function () {
+        db.run('CREATE TABLE spell (id INTEGER PRIMARY KEY, name TEXT NOT NULL, class TEXT NOT NULL, level INTEGER NOT NULL, components TEXT NOT NULL,' +
+            'spell_resitance TEXT');
+
+        var statement = db.prepare('INSERT INTO spell VALUES (?)');
+        var datalen = data.length;
+        for (var i = 0; i < datalen; i++) {
+            statement.run(data[0].name, data[0].classname, data[0].level, data[0].components.join(), data[0].spellreistance);
+        }
+        statement.finalize();
+    });
+    db.close();
 }
