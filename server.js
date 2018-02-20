@@ -2,6 +2,7 @@ var cheerio = require('cheerio');
 var request = require('requestretry');
 var MongoClient = require('mongodb').MongoClient;
 var format = require('string-format');
+var sqlite3 = require('sqlite3').verbose();
 
 const MAXINDEX = 1976;
 const collectionname = 'SSSP';
@@ -90,6 +91,10 @@ function processResults(results, client, collection) {
             var level1 = div.split("sorcerer\/wizard")[1][1];
             var Components1 = div.match(/([VSMF][^a-z]+|[VSMF])\s/g);
             var Resistance1 = div.split("Spell Resistance")[1];
+            if (Resistance1 != null) {
+                Resistance1 = Resistance1.replace(/\s/g, '');
+                Resistance1 = Resistance1 === 'yes';
+            }
             console.log(name1);
             // console.log(level1);
             var data = {
