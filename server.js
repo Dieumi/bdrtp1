@@ -85,22 +85,35 @@ function processResults(results, client, collection) {
         div = div.slice(0, rangepos) + ' ';
         div += afterRange;
 
-        if (regex.test(div)) {
+
             var name1 = rawHtml('.SpellDiv .heading').text();
-            var level1 = div.split("sorcerer\/wizard")[1][1];
+						if(div.indexOf('sorcerer\/wizard')!==-1){
+							  var level1 = div.split("sorcerer\/wizard")[1][1];
+						}else{
+							var level1 = div.match(/[0-9]/);
+						}
+
+						console.log(level1[0]);
+						var job=div.match(/Level(.*)Casting/g);
+
+						var classes=job[0].match(/.*[^Casting]/g);
+						classes=classes[0].match(/[^Level].*/g);
+						classes=classes[0].match(/([a-z]+)/g);
             var Components1 = div.match(/([VSMF][^a-z]+|[VSMF])\s/g);
             var Resistance1 = div.split("Spell Resistance")[1];
-            console.log(name1);
+            //console.log(name1);
+						console.log(classes);
             // console.log(level1);
-						console.log(Components1);
+						//console.log(Components1);
             var data = {
                 name: name1,
                 level: level1,
                 Components: Components1[0].replace(/\s/g, '').split(','),
+								Classes:classes,
                 Resistance: Resistance1
             };
             objet.push(data);
-        }
+
 
     }
     collection.insertMany(objet, function (error, result) {
