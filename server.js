@@ -2,10 +2,11 @@ var cheerio = require('cheerio');
 var request = require('requestretry');
 var MongoClient = require('mongodb').MongoClient;
 var format = require('string-format');
+var sqlite3 = require('sqlite3').verbose();
 
 const MAXINDEX = 1976;
-const collectionname = 'SSSP';
-const dbname = 'graph_algorithms';
+const collectionname = 'Spell';
+const dbname = 'BDR_TP1';
 
 format.extend(String.prototype);
 
@@ -76,6 +77,8 @@ function processResults(results, client, collection) {
     var regex = /sorcerer\/wizard [01234]/;
     //var regex2 = /Components V/;
     var length = results.length;
+		console.log(length)
+
     var objet = [];
     for (var i = 0; i < length; i++) {
         var rawHtml = cheerio.load(results[i]);
@@ -93,7 +96,6 @@ function processResults(results, client, collection) {
 							var level1 = div.match(/[0-9]/);
 						}
 
-						console.log(level1[0]);
 						var job=div.match(/Level(.*)Casting/g);
 
 						var classes=job[0].match(/.*[^Casting]/g);
@@ -101,10 +103,14 @@ function processResults(results, client, collection) {
 						classes=classes[0].match(/([a-z]+)/g);
             var Components1 = div.match(/([VSMF][^a-z]+|[VSMF])\s/g);
             var Resistance1 = div.split("Spell Resistance")[1];
-            //console.log(name1);
-						console.log(classes);
+            if (Resistance1 != null) {
+                Resistance1 = Resistance1.replace(/\s/g, '');
+                Resistance1 = Resistance1 === 'yes';
+            }
+
             // console.log(level1);
 						//console.log(Components1);
+					
             var data = {
                 name: name1,
                 level: level1,
