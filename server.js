@@ -39,7 +39,6 @@ MongoClient.connect('mongodb://localhost:27017', function (err, client) {
         }
 
     });
-    //Pour garder le chemin, enregistrer un backpointer.
     var responses = [];
     var responsecount = 1;
     console.log('Fetching data from website...');
@@ -128,7 +127,7 @@ function insertInSqlLite(data) {
         var statement = db.prepare('INSERT INTO spell VALUES (?)');
         var datalen = data.length;
         for (var i = 0; i < datalen; i++) {
-            statement.run(data[0].name, data[0].classname, data[0].level, data[0].components.join(), data[0].spellreistance);
+            statement.run(data[0].name, data[0].classname, data[0].level, data[0].components.join(), data[0].spellreistance ? 'yes' : 'no');
         }
         statement.finalize();
     });
