@@ -135,21 +135,24 @@ function processResults(results, client, collection) {
             throw error;
         else {
             console.log('Inserted {0} items in DB'.format(result.insertedCount));
-            client.close(false);
-        }
-    });
-    collection.find().toArray().then(function(resultat){
-        var spell=  resultat.filter(function(result){
-            if(result.Classes.includes('sorcerer') || result.Classes.includes('wizard') ){
 
-               if(result.Components[0]==='V' && result.level<=4 && result.Components.length==1){
-                    return result;
-               }
-            };
-        }).map(function(result){
-            return [result.name,result.level];
+        }
+
+        collection.find().toArray().then(function(resultat){
+            var spell=  resultat.filter(function(result){
+                if(result.Classes.includes('sorcerer') || result.Classes.includes('wizard') ){
+
+                   if((result.Components[0]==='V'|result.Components==='V') && result.level<=4 && result.Components.length==1){
+                        return result;
+                   }
+                };
+            }).map(function(result){
+                return [result.name,result.level];
+            })
+            console.log(spell);
+            console.log(spell.length);
+            client.close(false);
         })
-        console.log(spell);
-        console.log(spell.length);
-    })
+    });
+
 }
