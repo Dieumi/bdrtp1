@@ -142,17 +142,18 @@ function processResults(results, client, collection) {
             var spell=  resultat.filter(function(result){
                 if(result.Classes.includes('sorcerer') || result.Classes.includes('wizard') ){
 
-                   if((result.Components[0]==='V'|result.Components==='V') && result.level<=4 && result.Components.length==1){
+                    if ((result.Components[0] === 'V' | result.Components === 'V') && result.level <= 4 && result.Components.length === 1) {
                         return result;
                    }
-                };
+                }
             }).map(function(result){
                 return [result.name,result.level];
-            })
+            });
             console.log(spell);
             console.log(spell.length);
             client.close(false);
         })
     });
+
 
 }
