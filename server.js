@@ -70,7 +70,11 @@ MongoClient.connect('mongodb://localhost:27017', function (err, client) {
 
 
         })
+
+
     }
+
+
 }); //MongoClient Connect
 
 function processResults(results, client, collection) {
@@ -81,8 +85,12 @@ function processResults(results, client, collection) {
 
     var objet = [];
     for (var i = 0; i < length; i++) {
+
         var rawHtml = cheerio.load(results[i]);
         var div = rawHtml('.SpellDiv .SPDet').text();
+        if(div!==""){
+
+
         var rangepos = div.search('Range');
         var afterRange = div.slice(rangepos);
         div = div.slice(0, rangepos) + ' ';
@@ -101,7 +109,7 @@ function processResults(results, client, collection) {
 						var classes=job[0].match(/.*[^Casting]/g);
 						classes=classes[0].match(/[^Level].*/g);
 						classes=classes[0].match(/([a-z]+)/g);
-            var Components1 = div.match(/([VSMF][^a-z]+|[VSMF])\s/g);
+            var Components1 = div.match(/([VSMF][^a-z]+|[VSMF]|[?])\s/g);
             var Resistance1 = div.split("Spell Resistance")[1];
             if (Resistance1 != null) {
                 Resistance1 = Resistance1.replace(/\s/g, '');
@@ -110,7 +118,7 @@ function processResults(results, client, collection) {
 
             // console.log(level1);
 						//console.log(Components1);
-					
+
             var data = {
                 name: name1,
                 level: level1,
@@ -120,7 +128,7 @@ function processResults(results, client, collection) {
             };
             objet.push(data);
 
-
+          }
     }
     collection.insertMany(objet, function (error, result) {
         if (error)
@@ -130,4 +138,18 @@ function processResults(results, client, collection) {
             client.close(false);
         }
     });
+    collection.find().toArray().then(function(resultat){
+        var spell=  resultat.filter(function(result){
+            if(result.Classes.includes('sorcerer') || result.Classes.includes('wizard') ){
+
+               if(result.Components[0]==='V' && result.level<=4 && result.Components.length==1){
+                    return result;
+               }
+            };
+        }).map(function(result){
+            return [result.name,result.level];
+        })
+        console.log(spell);
+        console.log(spell.length);
+    })
 }
