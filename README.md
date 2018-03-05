@@ -3,4 +3,4 @@
 
 - Malek El Ouerghi
 - Paul Seichais
-- Pierre Lo
+- Pierre Lochouarn
