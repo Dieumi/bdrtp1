@@ -82,7 +82,7 @@ function processResults(results, client, collection) {
     var regex = /sorcerer\/wizard [01234]/;
     //var regex2 = /Components V/;
     var length = results.length;
-    console.log(length);
+    // console.log(length);
 
     var objet = [];
     for (var i = 0; i < length; i++) {
