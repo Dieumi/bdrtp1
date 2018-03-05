@@ -1,0 +1,269 @@
+[ { _id: 'A', value: { pagerank: 1, outgoinglinks: [Array] } },
+  { _id: 'B', value: { pagerank: 0.575, outgoinglinks: [Array] } },
+  { _id: 'C', value: { pagerank: 2.275, outgoinglinks: [Array] } },
+  { _id: 'D',
+    value: { pagerank: 0.15000000000000002, outgoinglinks: [Array] } } ]
+************************************************************************
+************************************************************************
+************************************************************************
+VALEUR DE I =  0
+ENCORE UNE ITERATION
+[ { _id: 'A',
+    value: { pagerank: 2.0837499999999998, outgoinglinks: [Array] } },
+  { _id: 'B', value: { pagerank: 0.575, outgoinglinks: [Array] } },
+  { _id: 'C',
+    value: { pagerank: 1.1912500000000001, outgoinglinks: [Array] } },
+  { _id: 'D',
+    value: { pagerank: 0.15000000000000002, outgoinglinks: [Array] } } ]
+************************************************************************
+************************************************************************
+************************************************************************
+VALEUR DE I =  1
+ENCORE UNE ITERATION
+[ { _id: 'A',
+    value: { pagerank: 1.1625625, outgoinglinks: [Array] } },
+  { _id: 'B',
+    value: { pagerank: 1.0355937499999999, outgoinglinks: [Array] } },
+  { _id: 'C',
+    value: { pagerank: 1.6518437499999998, outgoinglinks: [Array] } },
+  { _id: 'D',
+    value: { pagerank: 0.15000000000000002, outgoinglinks: [Array] } } ]
+************************************************************************
+************************************************************************
+************************************************************************
+VALEUR DE I =  2
+ENCORE UNE ITERATION
+[ { _id: 'A',
+    value: { pagerank: 1.5540671874999998, outgoinglinks: [Array] } },
+  { _id: 'B',
+    value: { pagerank: 0.6440890625, outgoinglinks: [Array] } },
+  { _id: 'C',
+    value: { pagerank: 1.6518437499999998, outgoinglinks: [Array] } },
+  { _id: 'D',
+    value: { pagerank: 0.15000000000000002, outgoinglinks: [Array] } } ]
+************************************************************************
+************************************************************************
+************************************************************************
+VALEUR DE I =  3
+ENCORE UNE ITERATION
+[ { _id: 'A',
+    value: { pagerank: 1.5540671874999998, outgoinglinks: [Array] } },
+  { _id: 'B',
+    value: { pagerank: 0.8104785546875, outgoinglinks: [Array] } },
+  { _id: 'C',
+    value: { pagerank: 1.4854542578125, outgoinglinks: [Array] } },
+  { _id: 'D',
+    value: { pagerank: 0.15000000000000002, outgoinglinks: [Array] } } ]
+************************************************************************
+************************************************************************
+************************************************************************
+VALEUR DE I =  4
+ENCORE UNE ITERATION
+[ { _id: 'A',
+    value: { pagerank: 1.412636119140625, outgoinglinks: [Array] } },
+  { _id: 'B',
+    value: { pagerank: 0.8104785546875, outgoinglinks: [Array] } },
+  { _id: 'C',
+    value: { pagerank: 1.626885326171875, outgoinglinks: [Array] } },
+  { _id: 'D',
+    value: { pagerank: 0.15000000000000002, outgoinglinks: [Array] } } ]
+************************************************************************
+************************************************************************
+************************************************************************
+VALEUR DE I =  5
+ENCORE UNE ITERATION
+[ { _id: 'A',
+    value: { pagerank: 1.5328525272460936, outgoinglinks: [Array] } },
+  { _id: 'B',
+    value: { pagerank: 0.7503703506347656, outgoinglinks: [Array] } },
+  { _id: 'C',
+    value: { pagerank: 1.5667771221191407, outgoinglinks: [Array] } },
+  { _id: 'D',
+    value: { pagerank: 0.15000000000000002, outgoinglinks: [Array] } } ]
+************************************************************************
+************************************************************************
+************************************************************************
+VALEUR DE I =  6
+ENCORE UNE ITERATION
+[ { _id: 'A',
+    value: { pagerank: 1.4817605538012697, outgoinglinks: [Array] } },
+  { _id: 'B',
+    value: { pagerank: 0.8014623240795897, outgoinglinks: [Array] } },
+  { _id: 'C',
+    value: { pagerank: 1.5667771221191407, outgoinglinks: [Array] } },
+  { _id: 'D',
+    value: { pagerank: 0.15000000000000002, outgoinglinks: [Array] } } ]
+************************************************************************
+************************************************************************
+************************************************************************
+VALEUR DE I =  7
+ENCORE UNE ITERATION
+[ { _id: 'A',
+    value: { pagerank: 1.4817605538012697, outgoinglinks: [Array] } },
+  { _id: 'B',
+    value: { pagerank: 0.7797482353655396, outgoinglinks: [Array] } },
+  { _id: 'C',
+    value: { pagerank: 1.5884912108331908, outgoinglinks: [Array] } },
+  { _id: 'D',
+    value: { pagerank: 0.15000000000000002, outgoinglinks: [Array] } } ]
+************************************************************************
+************************************************************************
+************************************************************************
+VALEUR DE I =  8
+ENCORE UNE ITERATION
+[ { _id: 'A',
+    value: { pagerank: 1.500217529208212, outgoinglinks: [Array] } },
+  { _id: 'B',
+    value: { pagerank: 0.7797482353655396, outgoinglinks: [Array] } },
+  { _id: 'C',
+    value: { pagerank: 1.5700342354262484, outgoinglinks: [Array] } },
+  { _id: 'D',
+    value: { pagerank: 0.15000000000000002, outgoinglinks: [Array] } } ]
+************************************************************************
+************************************************************************
+************************************************************************
+VALEUR DE I =  9
+ENCORE UNE ITERATION
+[ { _id: 'A',
+    value: { pagerank: 1.484529100112311, outgoinglinks: [Array] } },
+  { _id: 'B',
+    value: { pagerank: 0.7875924499134901, outgoinglinks: [Array] } },
+  { _id: 'C',
+    value: { pagerank: 1.577878449974199, outgoinglinks: [Array] } },
+  { _id: 'D',
+    value: { pagerank: 0.15000000000000002, outgoinglinks: [Array] } } ]
+************************************************************************
+************************************************************************
+************************************************************************
+VALEUR DE I =  10
+ENCORE UNE ITERATION
+[ { _id: 'A',
+    value: { pagerank: 1.4911966824780691, outgoinglinks: [Array] } },
+  { _id: 'B',
+    value: { pagerank: 0.7809248675477323, outgoinglinks: [Array] } },
+  { _id: 'C',
+    value: { pagerank: 1.577878449974199, outgoinglinks: [Array] } },
+  { _id: 'D',
+    value: { pagerank: 0.15000000000000002, outgoinglinks: [Array] } } ]
+************************************************************************
+************************************************************************
+************************************************************************
+VALEUR DE I =  11
+ENCORE UNE ITERATION
+[ { _id: 'A',
+    value: { pagerank: 1.4911966824780691, outgoinglinks: [Array] } },
+  { _id: 'B',
+    value: { pagerank: 0.7837585900531794, outgoinglinks: [Array] } },
+  { _id: 'C',
+    value: { pagerank: 1.575044727468752, outgoinglinks: [Array] } },
+  { _id: 'D',
+    value: { pagerank: 0.15000000000000002, outgoinglinks: [Array] } } ]
+************************************************************************
+************************************************************************
+************************************************************************
+VALEUR DE I =  12
+ENCORE UNE ITERATION
+[ { _id: 'A',
+    value: { pagerank: 1.4887880183484392, outgoinglinks: [Array] } },
+  { _id: 'B',
+    value: { pagerank: 0.7837585900531794, outgoinglinks: [Array] } },
+  { _id: 'C',
+    value: { pagerank: 1.577453391598382, outgoinglinks: [Array] } },
+  { _id: 'D',
+    value: { pagerank: 0.15000000000000002, outgoinglinks: [Array] } } ]
+************************************************************************
+************************************************************************
+************************************************************************
+VALEUR DE I =  13
+ENCORE UNE ITERATION
+[ { _id: 'A',
+    value: { pagerank: 1.4908353828586245, outgoinglinks: [Array] } },
+  { _id: 'B',
+    value: { pagerank: 0.7827349077980866, outgoinglinks: [Array] } },
+  { _id: 'C',
+    value: { pagerank: 1.576429709343289, outgoinglinks: [Array] } },
+  { _id: 'D',
+    value: { pagerank: 0.15000000000000002, outgoinglinks: [Array] } } ]
+************************************************************************
+************************************************************************
+************************************************************************
+VALEUR DE I =  14
+ENCORE UNE ITERATION
+[ { _id: 'A',
+    value: { pagerank: 1.4899652529417957, outgoinglinks: [Array] } },
+  { _id: 'B',
+    value: { pagerank: 0.7836050377149154, outgoinglinks: [Array] } },
+  { _id: 'C',
+    value: { pagerank: 1.576429709343289, outgoinglinks: [Array] } },
+  { _id: 'D',
+    value: { pagerank: 0.15000000000000002, outgoinglinks: [Array] } } ]
+************************************************************************
+************************************************************************
+************************************************************************
+VALEUR DE I =  15
+ENCORE UNE ITERATION
+[ { _id: 'A',
+    value: { pagerank: 1.4899652529417957, outgoinglinks: [Array] } },
+  { _id: 'B',
+    value: { pagerank: 0.7832352325002632, outgoinglinks: [Array] } },
+  { _id: 'C',
+    value: { pagerank: 1.5767995145579414, outgoinglinks: [Array] } },
+  { _id: 'D',
+    value: { pagerank: 0.15000000000000002, outgoinglinks: [Array] } } ]
+************************************************************************
+************************************************************************
+************************************************************************
+VALEUR DE I =  16
+ENCORE UNE ITERATION
+[ { _id: 'A',
+    value: { pagerank: 1.4902795873742503, outgoinglinks: [Array] } },
+  { _id: 'B',
+    value: { pagerank: 0.7832352325002632, outgoinglinks: [Array] } },
+  { _id: 'C',
+    value: { pagerank: 1.5764851801254869, outgoinglinks: [Array] } },
+  { _id: 'D',
+    value: { pagerank: 0.15000000000000002, outgoinglinks: [Array] } } ]
+************************************************************************
+************************************************************************
+************************************************************************
+VALEUR DE I =  17
+ENCORE UNE ITERATION
+[ { _id: 'A',
+    value: { pagerank: 1.4900124031066637, outgoinglinks: [Array] } },
+  { _id: 'B',
+    value: { pagerank: 0.7833688246340563, outgoinglinks: [Array] } },
+  { _id: 'C',
+    value: { pagerank: 1.57661877225928, outgoinglinks: [Array] } },
+  { _id: 'D',
+    value: { pagerank: 0.15000000000000002, outgoinglinks: [Array] } } ]
+************************************************************************
+************************************************************************
+************************************************************************
+VALEUR DE I =  18
+ENCORE UNE ITERATION
+[ { _id: 'A',
+    value: { pagerank: 1.4901259564203881, outgoinglinks: [Array] } },
+  { _id: 'B',
+    value: { pagerank: 0.7832552713203321, outgoinglinks: [Array] } },
+  { _id: 'C',
+    value: { pagerank: 1.57661877225928, outgoinglinks: [Array] } },
+  { _id: 'D',
+    value: { pagerank: 0.15000000000000002, outgoinglinks: [Array] } } ]
+************************************************************************
+************************************************************************
+************************************************************************
+VALEUR DE I =  19
+ENCORE UNE ITERATION
+[ { _id: 'A',
+    value: { pagerank: 1.4901259564203881, outgoinglinks: [Array] } },
+  { _id: 'B',
+    value: { pagerank: 0.7833035314786649, outgoinglinks: [Array] } },
+  { _id: 'C',
+    value: { pagerank: 1.5765705121009472, outgoinglinks: [Array] } },
+  { _id: 'D',
+    value: { pagerank: 0.15000000000000002, outgoinglinks: [Array] } } ]
+************************************************************************
+************************************************************************
+************************************************************************
+VALEUR DE I =  20
+Fin du programme!!!

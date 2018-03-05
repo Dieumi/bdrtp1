@@ -1,0 +1,68 @@
+Reached collection Spell
+Fetching data from website...
+Found items in collection Spell
+Collection cleaned
+Collection Spell successfully created
+Obtained 1976 items from website
+///////SQLITE///////
+Inserted 1973 items in DB
+sqlite result:
+[ { name: 'Blindness/DeafnessMythic Blindness/Deafness',
+    level: 2 },
+  { name: 'Blur', level: 2 },
+  { name: 'ShoutMythic Shout', level: 4 },
+  { name: 'Rainbow Pattern', level: 4 },
+  { name: 'Steal Voice', level: 2 },
+  { name: 'Buoyancy', level: 2 },
+  { name: 'Wave Shield', level: 1 },
+  { name: 'Sundering Shards', level: 1 },
+  { name: 'Storm Step', level: 3 },
+  { name: 'Silent Table', level: 2 },
+  { name: 'Dimension Door', level: 4 },
+  { name: 'Flare', level: 0 },
+  { name: 'Hypnotic Pattern', level: 2 },
+  { name: 'Geas, Lesser', level: 4 },
+  { name: 'Feather FallMythic Feather Fall', level: 1 },
+  { name: 'Flare Burst', level: 1 },
+  { name: 'Buoyancy', level: 2 },
+  { name: 'Liberating Command', level: 1 },
+  { name: 'Anti-Summoning Shield', level: 2 },
+  { name: 'Emergency Force Sphere', level: 4 },
+  { name: 'Chastise', level: 1 },
+  { name: 'Sotto Voce', level: 0 },
+  { name: 'Dweomer Retaliation', level: 3 },
+  { name: 'Liberating Comand', level: 1 },
+  { name: 'Hold PortalMythic Hold Portal', level: 1 },
+  { name: 'Knock', level: 2 },
+  { name: 'Spark', level: 0 } ]
+27
+/////MONGODB///////
+MapReduce result:
+[ [ 'Blindness/DeafnessMythic Blindness/Deafness', 2 ],
+  [ 'Blur', 2 ],
+  [ 'ShoutMythic Shout', 4 ],
+  [ 'Rainbow Pattern', 4 ],
+  [ 'Steal Voice', 2 ],
+  [ 'Buoyancy', 2 ],
+  [ 'Wave Shield', 1 ],
+  [ 'Sundering Shards', 1 ],
+  [ 'Storm Step', 3 ],
+  [ 'Silent Table', 2 ],
+  [ 'Dimension Door', 4 ],
+  [ 'Flare', 0 ],
+  [ 'Hypnotic Pattern', 2 ],
+  [ 'Geas, Lesser', 4 ],
+  [ 'Feather FallMythic Feather Fall', 1 ],
+  [ 'Flare Burst', 1 ],
+  [ 'Buoyancy', 2 ],
+  [ 'Liberating Command', 1 ],
+  [ 'Anti-Summoning Shield', 2 ],
+  [ 'Emergency Force Sphere', 4 ],
+  [ 'Chastise', 1 ],
+  [ 'Sotto Voce', 0 ],
+  [ 'Dweomer Retaliation', 3 ],
+  [ 'Liberating Comand', 1 ],
+  [ 'Hold PortalMythic Hold Portal', 1 ],
+  [ 'Knock', 2 ],
+  [ 'Spark', 0 ] ]
+27
